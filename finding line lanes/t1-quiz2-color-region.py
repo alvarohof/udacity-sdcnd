@@ -37,9 +37,9 @@ rgb_threshold = [red_threshold, green_threshold, blue_threshold]
 # Keep in mind the origin (x=0, y=0) is in the upper left
 # MODIFY THESE VALUES TO ISOLATE THE REGION 
 # WHERE THE LANE LINES ARE IN THE IMAGE
-left_bottom = [0, 539]
-right_bottom = [900, 300]
-apex = [400, 0]
+left_bottom = [0, ysize]
+right_bottom = [xsize, ysize]
+apex = [xsize*0.5, ysize*0.5]
 
 # Perform a linear fit (y=Ax+B) to each of the three sides of the triangle
 # np.polyfit returns the coefficients [A, B] of the fit

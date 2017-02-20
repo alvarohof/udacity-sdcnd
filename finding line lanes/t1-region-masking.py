@@ -29,9 +29,9 @@ region_select = np.copy(image)
 # Keep in mind the origin (x=0, y=0) is in the upper left in image processing
 # Note: if you run this code, you'll find these are not sensible values!!
 # But you'll get a chance to play with them soon in a quiz 
-left_bottom = [0, 539]
-right_bottom = [900, 300]
-apex = [400, 0]
+left_bottom = [0, ysize]
+right_bottom = [xsize, ysize]
+apex = [xsize*0.5, ysize*0.4]
 
 # Fit lines (y=Ax+B) to identify the  3 sided region of interest
 # np.polyfit() returns the coefficients [A, B] of the fit
@@ -39,7 +39,7 @@ fit_left = np.polyfit((left_bottom[0], apex[0]), (left_bottom[1], apex[1]), 1)
 fit_right = np.polyfit((right_bottom[0], apex[0]), (right_bottom[1], apex[1]), 1)
 fit_bottom = np.polyfit((left_bottom[0], right_bottom[0]), (left_bottom[1], right_bottom[1]), 1)
 
-# See algortihm meshgrip
+# See meshgrip algorithm
 # https://discussions.udacity.com/t/the-detection-of-points-within-a-region/212698/5
 # Find the region inside the lines
 XX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))
